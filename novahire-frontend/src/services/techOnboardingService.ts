@@ -4,7 +4,7 @@ import { ITechnicalOnboardingAttributes } from "../interfaces/ITechnicalOnboardi
 export const getTypeTechOnboarding = async () => {
   try {
     const getType = await axiosInstance.get("/tech-onboarding/get");
-    return getType.data.type_technical_onboarding;
+    return getType.data;
   } catch (error) {
     console.error("Error al obtener tipo de tech onboarding ", error);
   }

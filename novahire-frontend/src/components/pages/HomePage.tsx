@@ -113,7 +113,12 @@ const HomePage = () => {
                     : ""}
                 </TableCell>
                 <TableCell>
-                  <IconButton color="primary">
+                  <IconButton
+                    color="primary"
+                    onClick={() =>
+                      navigate(`/update-collaborator/${colab.id_collaborator}`)
+                    }
+                  >
                     <Edit />
                   </IconButton>
                   <IconButton
@@ -137,7 +142,11 @@ const HomePage = () => {
         >
           Crear Colaborador
         </Button>
-        <Button variant="outlined" color="secondary">
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={() => navigate("/onboarding-calendar")}
+        >
           Calendario de Onboarding
         </Button>
       </Box>

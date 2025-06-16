@@ -20,7 +20,7 @@ const theme = createTheme({
   typography: {
     fontFamily: "'Roboto', sans-serif",
     allVariants: {
-      color: "#FFFFFF",
+      color: "#000000",
     },
   },
 });
