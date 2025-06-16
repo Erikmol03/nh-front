@@ -1,4 +1,3 @@
-// theme.ts
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -14,7 +13,8 @@ const theme = createTheme({
       default: "#F3E5F5", // fondo suave
     },
     text: {
-      primary: "#FFFFFF", // texto blanco
+      primary: "#000000", // texto blanco
+      secondary: "#000000",
     },
   },
   typography: {

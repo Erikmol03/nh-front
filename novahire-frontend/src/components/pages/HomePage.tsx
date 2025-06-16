@@ -20,8 +20,10 @@ import {
   updateCollaborator,
 } from "../../services/collaboratorService";
 import { CollaboratorViewAttributes } from "../../interfaces/ICollaboratorView";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [collaborators, setCollaborators] = useState<
     CollaboratorViewAttributes[]
   >([]);
@@ -56,8 +58,8 @@ const HomePage = () => {
         NovaHire - Panel de Colaboradores
       </Typography>
 
-      <TableContainer component={Paper} sx={{ mt: 4 }}>
-        <Table>
+      <TableContainer component={Paper} sx={{ mt: 4, color: "text.secondary" }}>
+        <Table sx={{ color: "text.secondary" }}>
           <TableHead>
             <TableRow>
               <TableCell>Nombre</TableCell>
@@ -128,7 +130,11 @@ const HomePage = () => {
       </TableContainer>
 
       <Box display="flex" justifyContent="center" gap={4} mt={4}>
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/creation-collaborator")}
+        >
           Crear Colaborador
         </Button>
         <Button variant="outlined" color="secondary">

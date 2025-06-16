@@ -6,4 +6,7 @@ export interface CollaboratorAttributes {
   email: string;
   date_entry: Date;
   state_welcome_onboarding: boolean;
+  state_technical_onboarding: boolean;
+  type_technical_onboarding: string;
+  date_technical_onboarding?: Date;
 }
