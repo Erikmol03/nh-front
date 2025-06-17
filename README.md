@@ -1,5 +1,7 @@
 🧠 NovaHire · Plataforma de Gestión de Onboardings Técnicos
 
+Url de Acceso: http://novahire-frontend.s3-website-us-east-1.amazonaws.com/
+
 NovaHire es una plataforma desarrollada para gestionar y visualizar el proceso de onboarding técnico de colaboradores en una organización, centralizando fechas clave, registros e información útil para equipos técnicos y de talento humano.
 ⚙️ Arquitectura General
 
