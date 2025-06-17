@@ -155,32 +155,13 @@ const EditPage = () => {
                 onChange={(value) => setForm({ ...form, date_entry: value })}
               />
               <TextField
-                select
-                label="Tipo de Onboarding Técnico"
-                name="type_technical_onboarding"
+                label="Tipo de onboarding técnico"
+                name="first_name"
                 value={form.type_technical_onboarding}
-                onChange={(e) => {
-                  const selectedType = types.find(
-                    (type) => type.type_technical_onboarding === e.target.value
-                  );
-                  setForm({
-                    ...form,
-                    type_technical_onboarding: e.target.value,
-                    id_onboarding: selectedType?.id_onboarding || 0,
-                  });
-                }}
                 fullWidth
                 required
-              >
-                {types.map((type) => (
-                  <MenuItem
-                    key={type.id_onboarding}
-                    value={type.type_technical_onboarding}
-                  >
-                    {type.type_technical_onboarding}
-                  </MenuItem>
-                ))}
-              </TextField>
+                disabled
+              ></TextField>
               <DatePicker
                 label="Fecha del Onboarding Técnico (opcional)"
                 value={form.date_technical_onboarding}

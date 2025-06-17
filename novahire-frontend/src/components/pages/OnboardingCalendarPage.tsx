@@ -3,32 +3,32 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { getTypeTechOnboarding } from "../../services/techOnboardingService"; // Ajusta la ruta si es necesario
 
 const OnboardingCalendarPage = () => {
   const [events, setEvents] = useState([{}]);
 
   useEffect(() => {
-    const preloadEvents = [
-      {
-        title: "Journey to Cloud",
-        start: "2025-07-08",
-        end: "2025-07-12",
-        color: "#6a1b9a",
-      },
-      {
-        title: "Frontend Chapter Onboarding",
-        start: "2025-08-05",
-        end: "2025-08-10",
-        color: "#0288d1",
-      },
-      {
-        title: "Backend Chapter Onboarding",
-        start: "2025-09-15",
-        end: "2025-09-20",
-        color: "#43a047",
-      },
-    ];
-    setEvents(preloadEvents);
+    const fetchEvents = async () => {
+      try {
+        const data = await getTypeTechOnboarding();
+
+        if (Array.isArray(data)) {
+          const formattedEvents = data.map((item) => ({
+            title: item.type_technical_onboarding,
+            start: item.start_date,
+            end: item.end_date,
+            color: "#6a1b9a", // puedes asignar colores dinámicamente si quieres
+          }));
+
+          setEvents(formattedEvents);
+        }
+      } catch (error) {
+        console.error("Error cargando el calendario de onboarding", error);
+      }
+    };
+
+    fetchEvents();
   }, []);
 
   return (

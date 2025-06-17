@@ -9,3 +9,12 @@ export const getTypeTechOnboarding = async () => {
     console.error("Error al obtener tipo de tech onboarding ", error);
   }
 };
+
+export const getInfoTechOnboarding = async () => {
+  try {
+    const getType = await axiosInstance.get("/tech-onboarding/get");
+    return getType.data;
+  } catch (error) {
+    console.error("Error al obtener tipo de tech onboarding ", error);
+  }
+};
