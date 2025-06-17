@@ -3,7 +3,7 @@
 NovaHire es una plataforma desarrollada para gestionar y visualizar el proceso de onboarding técnico de colaboradores en una organización, centralizando fechas clave, registros e información útil para equipos técnicos y de talento humano.
 ⚙️ Arquitectura General
 
-    Frontend (React + Vite) desplegado en AWS S3 + CloudFront como hosting de contenido estático.
+    Frontend (React) desplegado en AWS S3 como hosting de contenido estático.
 
     Backend (Node.js + Express) expuesto a través de EC2, conectado a una base de datos MySQL RDS.
 
@@ -11,7 +11,7 @@ NovaHire es una plataforma desarrollada para gestionar y visualizar el proceso d
 
     Separación de capas: Controladores, Servicios, Modelos.
 
-    Autenticación básica con validación de correo.
+    Autenticación básica con JWT.
 
 🧩 Patrones y Buenas Prácticas
 
@@ -28,6 +28,8 @@ NovaHire es una plataforma desarrollada para gestionar y visualizar el proceso d
         Organización modular del código
 
         Código limpio, legible y comentado
+        
+        Pruebas unitarias
 
     Uso de TypeScript en el frontend para mejorar seguridad y escalabilidad.
 
@@ -50,7 +52,7 @@ Backend:
 
 Frontend:
 
-    React + Vite
+    React
 
     Material UI
 
@@ -66,17 +68,13 @@ Frontend:
 
     👤 Gestión de colaboradores:
 
-        Registro con asignación de tipo de onboarding técnico
+        Registrar nuevos colaboradores con su fecha de ingreso.
 
-        Visualización de su fecha de ingreso y progreso en el onboarding
+        Visualizar en una tabla quién ya completó cada tipo de onboarding.
 
-    🧠 Módulo de onboardings técnicos:
-
-        CRUD de tipos de onboarding técnico
-
-        Relación con múltiples colaboradores
-
-    🔐 Inicio de sesión con autenticación básica (por ahora, sin tokens)
+        Gestionar el calendario anual de onboardings técnicos predefinidos.
+        
+        Enviar alertas por correo una semana antes de cualquier onboarding técnico.    
 
 📈 Mejoras a Futuro
 
